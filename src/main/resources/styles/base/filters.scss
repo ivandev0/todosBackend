@@ -1,0 +1,17 @@
+@import "../config/globals";
+
+.filter {
+  color: $c-gray-dark;
+  line-height: $lh_little;
+
+  border: solid 0;
+  background: none;
+
+  outline: none;
+}
+
+.filter.__active {
+  border: 1px solid $c-pink;
+  background: none;
+  border-radius: 3px;
+}

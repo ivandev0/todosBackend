@@ -1,0 +1,57 @@
+@import "../config/globals";
+
+.todos-status-bar {
+  @include clearfix();
+  padding: 0px $offset_3x;
+  overflow: hidden;
+  text-align: center;
+
+  font-size: $fs_little;
+  color: $c-gray-dark;
+  line-height: $lh_little;
+
+  border: 0 solid $c-rainy-sky;
+  border-top-width: 1px;
+}
+
+.todos-status-bar_counter {
+  float: left;
+  padding: $offset_half 0;
+  margin: $offset_2x $offset_4x $offset_2x 0;
+}
+  .todos-status-bar_counter.__hide-temporally{
+    visibility: hidden;
+  }
+
+.todos-status-bar_delete-completed {
+  outline: none;
+  float: right;
+
+  margin: $offset_2x 0 $offset_2x $offset_4x;
+  padding: $offset_half 0;
+
+  background: none;
+  border: 0;
+
+  color: $c-gray-dark;
+  line-height: $lh_little;
+}
+  .todos-status-bar_delete-completed.__hide-temporally{
+    visibility: hidden;
+  }
+
+.todos-filters{
+  white-space: nowrap;
+  display: inline-block;
+  margin: $offset_2x 0;
+  outline: none;
+}
+  .todos-filters .filter {
+    margin: 0 $offset;
+  }
+    .todos-filters .filter:first-child {
+      margin-left: 0;
+    }
+    .todos-filters .filter:last-child {
+      margin-right: 0;
+    }

@@ -1,0 +1,97 @@
+@import "../config/globals";
+
+$todos-item_remove-width: 40px;
+$todos-item_remove-height: $todos-item_remove-width * 1.5;
+
+.todos-item{
+  @include clearfix();
+  display: flex;
+  float: inherit;
+
+  border: 0 solid $c-rainy-sky;
+  border-top-width: 1px;
+
+  font-size: $fs_xx-large;
+  color: $c-gray;
+  line-height: $lh_xx-large;
+
+  outline: none;
+}
+
+.todos-item.__hide {
+  display: none;
+}
+.todos-item:first-child,
+.todos-item.__hide:first-child ~ .todos-item {
+  border-top: 1px solid $c-rainy-sky;
+}
+.todos-item.__hide:first-child ~ .todos-item:not(.__hide) ~ .todos-item {
+  border-top: 0;
+}
+
+.todos-item:hover {
+  background: $c-snow;
+}
+  .todos-item:hover .todos-item_remove{
+     visibility: visible;
+   }
+
+  .todos-item:hover .input-checkbox_target:checked ~ .input-checkbox_visual{
+    background: white url('../../images/icons/completed.png') no-repeat $offset_2x $offset_2x;
+    background-clip: padding-box;
+  }
+
+  .todos-item:hover .input-checkbox_target ~ .input-checkbox_visual {
+    background: $c-white;
+    background-clip: padding-box;
+  }
+
+.todos-item.__ready .todos-item_input{
+  color: $c-smoke;
+  text-decoration: line-through;
+}
+
+.todos-item_input-w {
+  overflow: hidden;
+  flex: 1 0;
+}
+  .todos-item_input{
+    outline: none;
+    border: 0;
+    font-family: $font-main;
+    font-size: $fs_xx-large;
+    line-height: $lh_xx-large;
+    font-weight: 300;
+    padding-top: $offset_4x;
+    overflow: hidden;
+  }
+
+.todos-item_ready-mark{
+  float: left;
+  align-self: center;
+}
+
+.todos-item_remove {
+  visibility: hidden;
+  outline: inherit;
+
+  order: 1;
+  float: right;
+  align-self: center;
+  width: $todos-item_remove-width;
+  height: $todos-item_remove-height;
+
+  background: none;
+  position: relative;
+
+  border: 0;
+}
+.todos-item_remove_icon {
+  width: $offset_4x + $offset_half;
+  height: $offset_4x + $offset_half;
+  background: url('../../images/icons/close.png') no-repeat 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: (-$offset_2x -$offset_half) (-$offset_2x -$offset_half);
+}

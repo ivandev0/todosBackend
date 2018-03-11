@@ -1,0 +1,17 @@
+@import "config/globals";
+
+body, input, button, textarea, h1, h2, h3, h4, h5, h6 {
+  font-family: $font-main;
+  font-size: $fs_little;
+}
+
+body {
+  background: $c-gray-light;
+}
+
+.todos-body {
+  min-width: $min_width;
+  max-width: $max-width;
+  margin: 0 auto; /*выравняй посередине*/
+  padding: 0 $offset_5x;
+}
